@@ -1,11 +1,11 @@
 import './App.css';
+import RecursiveComp from './components/RecursiveComp';
 
 function App() {
   return (
     <>
-      <div>
         <h1>Recursive Component</h1>
-      </div>
+        <RecursiveComp />
     </>
   );
 }
