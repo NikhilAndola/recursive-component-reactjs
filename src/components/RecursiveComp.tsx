@@ -9,7 +9,17 @@ const stateData = [
     type: "Mango",
     children: [
       { id: 2, name: 'child 1.1', children: [], type: "Dusshari" },
-      { id: 3, name: 'child 1.2', children: [], type: "Kalmi" },
+      { id: 3, name: 'child 1.2', children: [  { id: 3, name: 'child 1.2.1', children: [], type: "I like it" },], type: "Kalmi" },
+    ]
+  },
+  { id: 4, name: 'Item 2', type: "Banana", children: [{ id: 10, name: 'child 2.1', children: [], type: "formal" }] },
+ {
+    id: 1,
+    name: 'Item 1',
+    type: "Mango",
+    children: [
+      { id: 2, name: 'child 1.1', children: [], type: "Dusshari" },
+      { id: 3, name: 'child 1.2', children: [  { id: 3, name: 'child 1.2.1', children: [], type: "I like it" },], type: "Kalmi" },
     ]
   },
   { id: 4, name: 'Item 2', type: "Banana", children: [{ id: 10, name: 'child 2.1', children: [], type: "formal" }] },
@@ -40,7 +50,7 @@ type RenderRecurse = {
 
 
 const RenderRecurse: React.FC<RenderRecurse> = ({ globalState, childCheck = false }) => {
-  return <div>
+  return <div style={{overflowY: "auto"}}>
     {
       globalState?.map((global: any) => (
         <div>
